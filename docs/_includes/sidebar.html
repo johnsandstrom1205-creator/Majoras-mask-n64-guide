@@ -1,18 +1,22 @@
 <aside class="sidebar" id="guide-nav">
   <label class="search-label" for="nav-search">Find a quest</label>
   <input id="nav-search" class="search" type="search" placeholder="Mask, place, reward…" autocomplete="off">
+  <div class="sidebar-progress" data-sidebar-progress>
+    <div><span>Your progress</span><strong><span data-progress-completed>0</span>/77</strong></div>
+    <div class="progress-track" aria-hidden="true"><span data-progress-bar></span></div>
+  </div>
   <nav aria-label="Guide chapters">
     {% assign main_pages = site.pages | where: "category", "Main Quest" | sort: "order" %}
     {% assign side_pages = site.pages | where: "category", "Side Quest" | sort: "order" %}
     {% assign mask_pages = site.pages | where: "category", "Mask Quest" | sort: "order" %}
     <details open><summary>Main quest <span>{{ main_pages.size }}</span></summary>
-      <ul>{% for item in main_pages %}<li data-nav-item><a {% if page.url == item.url %}aria-current="page"{% endif %} href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}</ul>
+      <ul>{% for item in main_pages %}<li data-nav-item><a class="quest-link" data-progress-key="{{ item.url }}" data-progress-category="main-quest" {% if page.url == item.url %}aria-current="page"{% endif %} href="{{ item.url | relative_url }}"><span>{{ item.title }}</span><span class="nav-check" aria-hidden="true">✓</span></a></li>{% endfor %}</ul>
     </details>
     <details><summary>Side quests <span>{{ side_pages.size }}</span></summary>
-      <ul>{% for item in side_pages %}<li data-nav-item><a {% if page.url == item.url %}aria-current="page"{% endif %} href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}</ul>
+      <ul>{% for item in side_pages %}<li data-nav-item><a class="quest-link" data-progress-key="{{ item.url }}" data-progress-category="side-quest" {% if page.url == item.url %}aria-current="page"{% endif %} href="{{ item.url | relative_url }}"><span>{{ item.title }}</span><span class="nav-check" aria-hidden="true">✓</span></a></li>{% endfor %}</ul>
     </details>
     <details><summary>Masks <span>{{ mask_pages.size }}</span></summary>
-      <ul>{% for item in mask_pages %}<li data-nav-item><a {% if page.url == item.url %}aria-current="page"{% endif %} href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}</ul>
+      <ul>{% for item in mask_pages %}<li data-nav-item><a class="quest-link" data-progress-key="{{ item.url }}" data-progress-category="mask-quest" {% if page.url == item.url %}aria-current="page"{% endif %} href="{{ item.url | relative_url }}"><span>{{ item.title }}</span><span class="nav-check" aria-hidden="true">✓</span></a></li>{% endfor %}</ul>
     </details>
     <details><summary>100% reference</summary>
       <ul>

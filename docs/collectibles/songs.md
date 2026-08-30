@@ -23,4 +23,4 @@ permalink: /collectibles/songs/
 | <label><input type="checkbox"> Inverted Song of Time</label> | Play Song of Time backward | Slow the passage of time. |
 | <label><input type="checkbox"> Song of Double Time</label> | Play each Song of Time note twice | Advance to the next dawn or night on N64. |
 
-    > The Inverted Song of Time, Song of Double Time, and Scarecrow's Song are not displayed as permanent Quest Status songs. The custom Scarecrow's Song must be taught again after every reset.
+> The Inverted Song of Time, Song of Double Time, and Scarecrow's Song are not displayed as permanent Quest Status songs. The custom Scarecrow's Song must be taught again after every reset.

@@ -1,4 +1,4 @@
-# Majora's Mask N64 Guide
+# Unofficial Majora's Mask N64 Guide
 
 An original, spoiler-full 100% walkthrough for the Nintendo 64 version of *The Legend of Zelda: Majora's Mask*.
 

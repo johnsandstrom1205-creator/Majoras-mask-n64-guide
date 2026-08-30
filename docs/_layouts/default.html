@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#171225">
-    <title>{% if page.title %}{{ page.title }} · {% endif %}Majora's Mask N64 Guide</title>
+    <title>{% if page.url == '/' %}{{ site.title }}{% elsif page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{{ page.summary | default: site.description | escape }}">
     <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
   </head>
@@ -12,13 +12,13 @@
     <header class="topbar">
       <a class="brand" href="{{ '/' | relative_url }}" aria-label="Guide home">
         <span class="moon-mark" aria-hidden="true"></span>
-        <span><small>Three days remain</small>Majora's Mask N64 Guide</span>
+        <span><small>Three days remain</small>Unofficial Majora's Mask N64 Guide</span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="guide-nav">Browse quests</button>
     </header>
     <div class="shell">
       {% include sidebar.html %}
-      <main class="content" id="main-content">
+      <main class="content{% if page.url == '/' %} home-content{% endif %}" id="main-content">
         {% unless page.url == '/' %}
           <nav class="breadcrumbs" aria-label="Breadcrumb">
             <a href="{{ '/' | relative_url }}">Guide</a><span>/</span><span>{{ page.category | default: 'Reference' }}</span>
@@ -28,8 +28,16 @@
             <h1>{{ page.title }}</h1>
             {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
           </header>
+          {% if page.category == 'Main Quest' or page.category == 'Side Quest' or page.category == 'Mask Quest' %}
+            <section class="completion-card" data-page-progress data-progress-key="{{ page.url }}" data-progress-category="{{ page.category | slugify }}" aria-label="Quest progress">
+              <button class="completion-toggle" type="button" aria-pressed="false">
+                <span class="completion-icon" aria-hidden="true">✓</span>
+                <span><strong>Mark as completed</strong><small>Saved only in this browser</small></span>
+              </button>
+            </section>
+          {% endif %}
         {% endunless %}
-        <article class="prose">{{ content }}</article>
+        <article class="prose{% if page.url == '/' %} home-prose{% endif %}">{{ content }}</article>
         {% unless page.url == '/' %}
           <footer class="page-footer">
             <a href="{{ '/' | relative_url }}">← Back to all quests</a>

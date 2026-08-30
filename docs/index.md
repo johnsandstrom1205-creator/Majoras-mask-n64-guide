@@ -3,37 +3,96 @@ layout: default
 title: "Home"
 category: ""
 order: 0
-summary: "A free, original 100% walkthrough for the Nintendo 64 version of Majora's Mask."
+summary: "A free, original and unofficial 100% walkthrough for the Nintendo 64 version of Majora's Mask."
 permalink: /
 ---
 
-
-    <section class="hero">
-      <p class="eyebrow">Nintendo 64 · Complete walkthrough</p>
-      <h1>Every cycle. Every mask. Every quest.</h1>
-      <p>A practical, spoiler-full guide built around the way <em>Majora's Mask</em> is actually played: choose the task you need, check its schedule, and finish it before the moon falls.</p>
-      <div class="hero-badges"><span class="badge">14 main chapters</span><span class="badge">39 side quests</span><span class="badge">24 masks</span><span class="badge">52 heart pieces</span><span class="badge">No ads · no tracking</span></div>
-    </section>
-
-    <div class="category-grid">
-      <a class="category-card" href="{{ '/main-quest/the-first-three-days/' | relative_url }}"><span>Start here</span><h2>Main quest</h2><p>Follow the intended route from the opening cycle through Majora.</p></a>
-      <a class="category-card" href="{{ '/side-quests/bombers-notebook-completion/' | relative_url }}"><span>Choose a story</span><h2>Side quests</h2><p>Schedules, requirements, rewards, failure states, and cycle planning.</p></a>
-      <a class="category-card" href="{{ '/masks/deku-mask/' | relative_url }}"><span>24 total</span><h2>Mask quests</h2><p>A separate page for every transformation, utility, access, and story mask.</p></a>
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Unofficial · Nintendo 64 · Complete walkthrough</p>
+    <h1>Every cycle.<br>Every mask.<br>Every quest.</h1>
+    <p>A practical, spoiler-full guide built around the way <em>Majora's Mask</em> is actually played: choose what you need, check the schedule, and finish it before the moon falls.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="{{ '/main-quest/the-first-three-days/' | relative_url }}">Start the walkthrough</a>
+      <a class="button button-secondary" href="{{ '/checklist/' | relative_url }}">Open 100% checklist</a>
     </div>
+  </div>
+  <div class="hero-badges" aria-label="Guide contents">
+    <span class="badge"><strong>14</strong> main chapters</span>
+    <span class="badge"><strong>39</strong> side quests</span>
+    <span class="badge"><strong>24</strong> masks</span>
+    <span class="badge"><strong>52</strong> heart pieces</span>
+    <span class="badge">No ads · no tracking</span>
+  </div>
+</section>
 
-    ## Recommended way to use the guide
+<section class="progress-panel" data-progress-dashboard aria-labelledby="progress-title">
+  <div class="progress-heading">
+    <div>
+      <p class="eyebrow">Saved on this device</p>
+      <h2 id="progress-title">Your adventure</h2>
+    </div>
+    <p><strong data-progress-completed>0</strong> of <strong>77</strong> quests complete</p>
+  </div>
+  <div class="progress-track progress-track-large" role="progressbar" aria-label="Overall quest completion" aria-valuemin="0" aria-valuemax="77" aria-valuenow="0">
+    <span data-progress-bar></span>
+  </div>
+  <div class="progress-breakdown">
+    <div data-progress-summary="main-quest" data-total="14"><span>Main quest</span><strong><span data-category-completed>0</span>/14</strong></div>
+    <div data-progress-summary="side-quest" data-total="39"><span>Side quests</span><strong><span data-category-completed>0</span>/39</strong></div>
+    <div data-progress-summary="mask-quest" data-total="24"><span>Masks</span><strong><span data-category-completed>0</span>/24</strong></div>
+  </div>
+  <p class="storage-note">Tick checklist items or mark whole quests as completed. Your progress stays in this browser only—there is no account, cloud storage, tracking, or fee.</p>
+</section>
 
-    1. Begin with **The First Three Days**, then follow the main chapters until you obtain the item needed for your chosen side quest.
-    2. Open side quests individually from the navigation. Each page tells you when to start and what survives a reset.
-    3. Use the [Master 100% Checklist]({{ '/checklist/' | relative_url }}) near the end of the game.
-    4. Tick checkboxes as you play. Progress is stored only in this browser on this device.
+<div class="category-grid" aria-label="Guide sections">
+  <a class="category-card" href="{{ '/main-quest/the-first-three-days/' | relative_url }}">
+    <span>Start here</span>
+    <h2>Main quest</h2>
+    <p>Follow the intended route from the opening cycle through Majora.</p>
+    <div class="card-progress"><span data-card-progress="main-quest">0 of 14 complete</span><span aria-hidden="true">→</span></div>
+  </a>
+  <a class="category-card" href="{{ '/side-quests/bombers-notebook-completion/' | relative_url }}">
+    <span>Choose a story</span>
+    <h2>Side quests</h2>
+    <p>Schedules, requirements, rewards, failure states, and cycle planning.</p>
+    <div class="card-progress"><span data-card-progress="side-quest">0 of 39 complete</span><span aria-hidden="true">→</span></div>
+  </a>
+  <a class="category-card" href="{{ '/masks/deku-mask/' | relative_url }}">
+    <span>24 total</span>
+    <h2>Mask quests</h2>
+    <p>A separate page for every transformation, utility, access, and story mask.</p>
+    <div class="card-progress"><span data-card-progress="mask-quest">0 of 24 complete</span><span aria-hidden="true">→</span></div>
+  </a>
+</div>
 
-    > This guide is for the original Nintendo 64 release and equivalent emulated releases such as the GameCube Collector's Edition, Virtual Console, and Nintendo Switch Online. It deliberately does not use the altered 3DS quest locations or boss mechanics.
+<section class="home-section">
+  <div class="section-heading">
+    <p class="eyebrow">Plan the cycle</p>
+    <h2>How to use the guide</h2>
+  </div>
+  <ol class="steps-list">
+    <li><span>01</span><div><strong>Begin with the opening cycle</strong><p>Follow The First Three Days, then continue until you have the item required for your chosen activity.</p></div></li>
+    <li><span>02</span><div><strong>Choose any quest</strong><p>Every quest has its own page with timing, requirements, rewards, and what survives a Song of Time reset.</p></div></li>
+    <li><span>03</span><div><strong>Save your progress</strong><p>Tick the steps as you play and mark the page complete. This browser remembers everything automatically.</p></div></li>
+  </ol>
+</section>
 
-    ## Quick principles
+<section class="home-section principles-section">
+  <div class="section-heading">
+    <p class="eyebrow">Before dawn</p>
+    <h2>Five rules worth remembering</h2>
+  </div>
+  <ul class="principle-grid">
+    <li><strong>Slow time</strong><span>Use the Inverted Song of Time before dungeons and schedule-heavy quests.</span></li>
+    <li><strong>Bank rupees</strong><span>Empty temporary quest slots and deposit cash before resetting the cycle.</span></li>
+    <li><strong>Activate owls</strong><span>Strike every owl statue immediately so the warp point remains available.</span></li>
+    <li><strong>Replay bosses</strong><span>After obtaining their remains, use the glowing emblem at the dungeon entrance.</span></li>
+    <li><strong>Watch schedules</strong><span>If an NPC is missing, check the day, time, and whether an earlier event changed their route.</span></li>
+  </ul>
+</section>
 
-    - Slow time at the start of any dungeon or schedule-heavy cycle.
-    - Bank rupees and empty temporary quest slots before resetting.
-    - Activate every owl statue immediately.
-    - Dungeon bosses can be replayed by stepping into the glowing emblem at the entrance after their remains are obtained.
-    - If an NPC does not appear, check both the day and whether an earlier event changed that schedule.
+<aside class="edition-note">
+  <strong>Built for the original Nintendo 64 version.</strong>
+  <p>Also suitable for equivalent emulated releases such as GameCube Collector's Edition, Virtual Console, and Nintendo Switch Online. The altered 3DS quest locations and boss mechanics are intentionally excluded.</p>
+</aside>
