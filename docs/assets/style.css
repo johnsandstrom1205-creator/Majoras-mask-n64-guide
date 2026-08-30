@@ -156,7 +156,7 @@ a.chapter-nav-card:hover { color: var(--ink); transform: translateY(-2px); borde
 @media (max-width: 920px) {
   .topbar { padding: 0 16px; }
   .shell { display: block; }
-  .sidebar { display: block; position: fixed; z-index: 30; top: 74px; left: 0; right: auto; width: min(88vw,360px); height: calc(100vh - 74px); opacity: 0; transform: translateX(-100%); pointer-events: none; background: rgba(15,12,25,.985); border-right: 1px solid var(--line); box-shadow: 28px 0 70px rgba(0,0,0,.45); transition: transform .22s ease, opacity .18s ease; }
+  .sidebar { display: block; position: fixed; z-index: 30; top: 74px; left: 0; right: auto; width: min(88vw,360px); height: calc(100vh - 74px); height: calc(100dvh - 74px); padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)); scroll-padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)); opacity: 0; transform: translateX(-100%); pointer-events: none; background: rgba(15,12,25,.985); border-right: 1px solid var(--line); box-shadow: 28px 0 70px rgba(0,0,0,.45); transition: transform .22s ease, opacity .18s ease; }
   .sidebar.open { opacity: 1; transform: translateX(0); pointer-events: auto; touch-action: pan-y; }
   .content { padding-top: 34px; }
   .quest-meta, .category-grid { grid-template-columns: 1fr; }
