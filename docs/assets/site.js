@@ -29,9 +29,15 @@
   if (toggle && sidebar) {
     const desktopMode = window.matchMedia('(min-width: 921px)');
 
+    const setMobileNavigationOpen = open => {
+      sidebar.classList.toggle('open', open);
+      document.documentElement.classList.toggle('mobile-nav-open', open);
+      document.body.classList.toggle('mobile-nav-open', open);
+    };
+
     const syncNavigation = () => {
       if (desktopMode.matches) {
-        sidebar.classList.remove('open');
+        setMobileNavigationOpen(false);
         const collapsed = storage.get(SIDEBAR_KEY) === '1';
         document.body.classList.toggle('sidebar-collapsed', collapsed);
         toggle.setAttribute('aria-expanded', String(!collapsed));
@@ -49,7 +55,7 @@
         const collapsed = !document.body.classList.contains('sidebar-collapsed');
         storage.set(SIDEBAR_KEY, collapsed ? '1' : '0');
       } else {
-        sidebar.classList.toggle('open');
+        setMobileNavigationOpen(!sidebar.classList.contains('open'));
       }
       syncNavigation();
     });
@@ -57,7 +63,7 @@
     sidebar.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         if (!desktopMode.matches) {
-          sidebar.classList.remove('open');
+          setMobileNavigationOpen(false);
           syncNavigation();
         }
       });
@@ -65,14 +71,14 @@
 
     document.addEventListener('click', event => {
       if (!desktopMode.matches && sidebar.classList.contains('open') && !sidebar.contains(event.target) && !toggle.contains(event.target)) {
-        sidebar.classList.remove('open');
+        setMobileNavigationOpen(false);
         syncNavigation();
       }
     });
 
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape' && !desktopMode.matches && sidebar.classList.contains('open')) {
-        sidebar.classList.remove('open');
+        setMobileNavigationOpen(false);
         syncNavigation();
         toggle.focus();
       }
