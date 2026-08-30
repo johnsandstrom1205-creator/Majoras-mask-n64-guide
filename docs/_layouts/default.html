@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171225">
+    <title>{% if page.title %}{{ page.title }} · {% endif %}Majora's Mask N64 Guide</title>
+    <meta name="description" content="{{ page.summary | default: site.description | escape }}">
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Guide home">
+        <span class="moon-mark" aria-hidden="true"></span>
+        <span><small>Three days remain</small>Majora's Mask N64 Guide</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="guide-nav">Browse quests</button>
+    </header>
+    <div class="shell">
+      {% include sidebar.html %}
+      <main class="content" id="main-content">
+        {% unless page.url == '/' %}
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="{{ '/' | relative_url }}">Guide</a><span>/</span><span>{{ page.category | default: 'Reference' }}</span>
+          </nav>
+          <header class="page-header">
+            {% if page.category %}<p class="eyebrow">{{ page.category }}</p>{% endif %}
+            <h1>{{ page.title }}</h1>
+            {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+          </header>
+        {% endunless %}
+        <article class="prose">{{ content }}</article>
+        {% unless page.url == '/' %}
+          <footer class="page-footer">
+            <a href="{{ '/' | relative_url }}">← Back to all quests</a>
+            <span>Original, unofficial N64 guide</span>
+          </footer>
+        {% endunless %}
+      </main>
+    </div>
+    <script src="{{ '/assets/site.js' | relative_url }}" defer></script>
+  </body>
+</html>

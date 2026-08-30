@@ -1,0 +1,29 @@
+<aside class="sidebar" id="guide-nav">
+  <label class="search-label" for="nav-search">Find a quest</label>
+  <input id="nav-search" class="search" type="search" placeholder="Mask, place, reward…" autocomplete="off">
+  <nav aria-label="Guide chapters">
+    {% assign main_pages = site.pages | where: "category", "Main Quest" | sort: "order" %}
+    {% assign side_pages = site.pages | where: "category", "Side Quest" | sort: "order" %}
+    {% assign mask_pages = site.pages | where: "category", "Mask Quest" | sort: "order" %}
+    <details open><summary>Main quest <span>{{ main_pages.size }}</span></summary>
+      <ul>{% for item in main_pages %}<li data-nav-item><a {% if page.url == item.url %}aria-current="page"{% endif %} href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}</ul>
+    </details>
+    <details><summary>Side quests <span>{{ side_pages.size }}</span></summary>
+      <ul>{% for item in side_pages %}<li data-nav-item><a {% if page.url == item.url %}aria-current="page"{% endif %} href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}</ul>
+    </details>
+    <details><summary>Masks <span>{{ mask_pages.size }}</span></summary>
+      <ul>{% for item in mask_pages %}<li data-nav-item><a {% if page.url == item.url %}aria-current="page"{% endif %} href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}</ul>
+    </details>
+    <details><summary>100% reference</summary>
+      <ul>
+        <li data-nav-item><a href="{{ '/checklist/' | relative_url }}">Master checklist</a></li>
+        <li data-nav-item><a href="{{ '/collectibles/heart-pieces/' | relative_url }}">52 Heart Pieces</a></li>
+        <li data-nav-item><a href="{{ '/collectibles/bottles/' | relative_url }}">6 Bottles</a></li>
+        <li data-nav-item><a href="{{ '/collectibles/upgrades/' | relative_url }}">Upgrades</a></li>
+        <li data-nav-item><a href="{{ '/collectibles/stray-fairies/' | relative_url }}">Stray Fairies</a></li>
+        <li data-nav-item><a href="{{ '/collectibles/songs/' | relative_url }}">Songs</a></li>
+        <li data-nav-item><a href="{{ '/references/' | relative_url }}">References</a></li>
+      </ul>
+    </details>
+  </nav>
+</aside>

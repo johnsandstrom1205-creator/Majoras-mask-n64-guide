@@ -1,0 +1,9 @@
+title: "Majora's Mask N64 Guide"
+description: "A free, original 100% walkthrough for the Nintendo 64 version of Majora's Mask."
+url: "https://johnsandstrom1205-creator.github.io"
+baseurl: "/Majoras-mask-n64-guide"
+markdown: kramdown
+kramdown:
+  input: GFM
+exclude:
+  - README.md
