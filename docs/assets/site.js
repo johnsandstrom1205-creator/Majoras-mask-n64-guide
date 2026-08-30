@@ -3,6 +3,7 @@
 
   const TOTAL_QUESTS = 77;
   const COMPLETE_PREFIX = 'mm-guide:completed:';
+  const SIDEBAR_KEY = 'mm-guide:sidebar-collapsed';
 
   const storage = {
     available: true,
@@ -26,17 +27,60 @@
   const sidebar = document.querySelector('.sidebar');
   const toggle = document.querySelector('.nav-toggle');
   if (toggle && sidebar) {
+    const desktopMode = window.matchMedia('(min-width: 921px)');
+
+    const syncNavigation = () => {
+      if (desktopMode.matches) {
+        sidebar.classList.remove('open');
+        const collapsed = storage.get(SIDEBAR_KEY) === '1';
+        document.body.classList.toggle('sidebar-collapsed', collapsed);
+        toggle.setAttribute('aria-expanded', String(!collapsed));
+        toggle.textContent = collapsed ? 'Browse quests' : 'Hide menu';
+      } else {
+        document.body.classList.remove('sidebar-collapsed');
+        const open = sidebar.classList.contains('open');
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.textContent = open ? 'Close menu' : 'Browse quests';
+      }
+    };
+
     toggle.addEventListener('click', () => {
-      const open = sidebar.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
+      if (desktopMode.matches) {
+        const collapsed = !document.body.classList.contains('sidebar-collapsed');
+        storage.set(SIDEBAR_KEY, collapsed ? '1' : '0');
+      } else {
+        sidebar.classList.toggle('open');
+      }
+      syncNavigation();
     });
 
     sidebar.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
+        if (!desktopMode.matches) {
+          sidebar.classList.remove('open');
+          syncNavigation();
+        }
       });
     });
+
+    document.addEventListener('click', event => {
+      if (!desktopMode.matches && sidebar.classList.contains('open') && !sidebar.contains(event.target) && !toggle.contains(event.target)) {
+        sidebar.classList.remove('open');
+        syncNavigation();
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !desktopMode.matches && sidebar.classList.contains('open')) {
+        sidebar.classList.remove('open');
+        syncNavigation();
+        toggle.focus();
+      }
+    });
+
+    if (desktopMode.addEventListener) desktopMode.addEventListener('change', syncNavigation);
+    else desktopMode.addListener(syncNavigation);
+    syncNavigation();
   }
 
   const search = document.querySelector('#nav-search');

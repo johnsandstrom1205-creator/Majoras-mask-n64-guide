@@ -38,6 +38,44 @@
           {% endif %}
         {% endunless %}
         <article class="prose{% if page.url == '/' %} home-prose{% endif %}">{{ content }}</article>
+        {% if page.category == 'Main Quest' or page.category == 'Side Quest' or page.category == 'Mask Quest' %}
+          {% assign navigation_pages = site.pages | where: "category", page.category | sort: "order" %}
+          {% assign previous_page = nil %}
+          {% assign next_page = nil %}
+          {% assign previous_candidate = nil %}
+          {% assign found_current = false %}
+          {% for item in navigation_pages %}
+            {% if found_current == true and next_page == nil %}
+              {% assign next_page = item %}
+            {% endif %}
+            {% if item.url == page.url %}
+              {% assign previous_page = previous_candidate %}
+              {% assign found_current = true %}
+            {% elsif found_current == false %}
+              {% assign previous_candidate = item %}
+            {% endif %}
+          {% endfor %}
+          <nav class="chapter-nav" aria-label="Previous and next {{ page.category | downcase }}">
+            {% if previous_page %}
+              <a class="chapter-nav-card chapter-nav-previous" href="{{ previous_page.url | relative_url }}">
+                <span>← Previous</span><strong>{{ previous_page.title }}</strong>
+              </a>
+            {% else %}
+              <span class="chapter-nav-card chapter-nav-previous is-disabled" aria-disabled="true">
+                <span>← Previous</span><strong>Start of section</strong>
+              </span>
+            {% endif %}
+            {% if next_page %}
+              <a class="chapter-nav-card chapter-nav-next" href="{{ next_page.url | relative_url }}">
+                <span>Next →</span><strong>{{ next_page.title }}</strong>
+              </a>
+            {% else %}
+              <span class="chapter-nav-card chapter-nav-next is-disabled" aria-disabled="true">
+                <span>Next →</span><strong>End of section</strong>
+              </span>
+            {% endif %}
+          </nav>
+        {% endif %}
         {% unless page.url == '/' %}
           <footer class="page-footer">
             <a href="{{ '/' | relative_url }}">← Back to all quests</a>
