@@ -44,8 +44,8 @@ Block or sidestep the whips, close the distance after a combo, and attack. Light
 
 After victory, the cycle ends and the credits reflect characters whose notebook stories you completed.
 
-- [ ] Four Moon Heart Pieces collected
+- [ ] <span data-progress-item="moon-heart-pieces">Four Moon Heart Pieces collected</span>
 - [ ] All 20 normal masks traded to Moon Children
 - [ ] <span data-progress-item="mask-fierce-deity" data-completes-quest="/masks/fierce-deitys-mask/">Fierce Deity's Mask obtained</span>
-- [ ] Majora defeated
+- [ ] <span data-progress-item="story-majora">Majora defeated</span>
 - [ ] Final save created after the credits

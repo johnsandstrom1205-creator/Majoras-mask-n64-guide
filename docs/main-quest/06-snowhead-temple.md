@@ -42,7 +42,7 @@ Collect the Heart Container and **Goht's Remains**. The mountain becomes spring 
 
 Return all 15 Snowhead fairies to the fountain at the base of Snowhead for a doubled magic meter.
 
-- [ ] Fire Arrows obtained
+- [ ] <span data-progress-item="item-fire-arrows">Fire Arrows obtained</span>
 - [ ] <span data-progress-item="fairy-snowhead">15/15 Stray Fairies returned</span>
-- [ ] Goht's Remains obtained
+- [ ] <span data-progress-item="boss-goht">Goht's Remains obtained</span>
 - [ ] <span data-progress-item="fairy-snowhead">Double Magic obtained</span>

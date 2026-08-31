@@ -55,8 +55,8 @@ At midnight on the Final Day, the Clock Tower opens. Launch from the nearby flow
 
 ## Before moving on
 
-- [ ] Ocarina of Time recovered
-- [ ] Song of Time learned
-- [ ] Song of Healing learned
+- [ ] <span data-progress-item="story-ocarina">Ocarina of Time recovered</span>
+- [ ] <span data-progress-item="song-time">Song of Time learned</span>
+- [ ] <span data-progress-item="song-healing">Song of Healing learned</span>
 - [ ] <span data-progress-item="mask-deku" data-updates-items="fairy-clock-town-deku" data-completes-quest="/masks/deku-mask/">Deku Mask obtained</span>
 - [ ] At least one rupee deposited so the banker recognizes you after resets

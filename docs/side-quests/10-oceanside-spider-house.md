@@ -25,4 +25,4 @@ permalink: /side-quests/oceanside-spider-house/
 - [ ] Clear webs and Hookshot across the library and dining-room routes.
 - [ ] Collect all 30 Skulltula tokens in one cycle.
 - [ ] Wear Captain's Hat to question Stalchildren, then shoot the colored masks in their stated order for the heart piece.
-- [ ] Return to the entrance after all tokens.
+- [ ] <span data-progress-item="upgrade-giant-wallet">Return to the entrance on the First Day after all tokens and receive the Giant Wallet.</span>

@@ -41,8 +41,8 @@ Defeat both worms, collect the Heart Container, and take **Twinmold's Remains**.
 
 Return all 15 Stone Tower fairies to the fountain in Ikana Canyon. The reward is the **Great Fairy's Sword**, a powerful C-button weapon.
 
-- [ ] Light Arrows obtained
+- [ ] <span data-progress-item="item-light-arrows">Light Arrows obtained</span>
 - [ ] <span data-progress-item="mask-giant" data-completes-quest="/masks/giants-mask/">Giant's Mask obtained</span>
 - [ ] <span data-progress-item="fairy-stone-tower">15/15 Stray Fairies returned</span>
-- [ ] Twinmold's Remains obtained
+- [ ] <span data-progress-item="boss-twinmold">Twinmold's Remains obtained</span>
 - [ ] <span data-progress-item="fairy-stone-tower">Great Fairy's Sword obtained</span>

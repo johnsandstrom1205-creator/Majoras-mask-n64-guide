@@ -42,8 +42,8 @@ Deposit all seven eggs in the lab aquarium. Stand where you can see the hatched 
 Play the song for Lulu at Zora Cape. Her voice returns, the giant turtle awakens, and it carries you to Great Bay Temple.
 
 - [ ] <span data-progress-item="mask-zora" data-completes-quest="/masks/zora-mask/">Zora Mask obtained</span>
-- [ ] Hookshot obtained
+- [ ] <span data-progress-item="item-hookshot">Hookshot obtained</span>
 - [ ] Four fortress eggs recovered
 - [ ] Three Pinnacle Rock eggs recovered
-- [ ] New Wave Bossa Nova learned
+- [ ] <span data-progress-item="song-new-wave-bossa-nova">New Wave Bossa Nova learned</span>
 - [ ] Great Bay Temple opened

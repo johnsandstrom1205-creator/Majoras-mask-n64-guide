@@ -20,5 +20,5 @@ permalink: /side-quests/clock-town-bank/
 ## Completion checklist
 
 - [ ] Deposit spare rupees before every Song of Time reset.
-- [ ] Reach 200 total for the Adult Wallet.
+- [ ] <span data-progress-item="upgrade-adult-wallet">Reach 200 total for the Adult Wallet.</span>
 - [ ] Continue to 5,000 for the final heart piece.

@@ -138,38 +138,56 @@
 
   const STORY_OUTCOMES = {
     '/main-quest/the-first-three-days/': {
-      items: ['mask-deku', 'fairy-clock-town-deku'],
+      items: ['story-ocarina', 'song-time', 'song-healing', 'mask-deku', 'fairy-clock-town-deku'],
       quests: ['/masks/deku-mask/']
     },
     '/main-quest/clock-town-preparation/': {
-      items: ['mask-great-fairy', 'fairy-clock-town-human'],
+      items: ['mask-great-fairy', 'fairy-clock-town-human', 'upgrade-adult-wallet'],
       quests: ['/masks/great-fairys-mask/']
     },
-    '/main-quest/woodfall-temple/': { items: ['fairy-woodfall'], quests: [] },
+    '/main-quest/southern-swamp-and-deku-palace/': {
+      items: ['song-sonata-awakening', 'song-soaring', 'owl-woodfall'],
+      quests: []
+    },
+    '/main-quest/woodfall-temple/': {
+      items: ['item-hero-bow', 'fairy-woodfall', 'boss-odolwa', 'song-oath-order'],
+      quests: []
+    },
     '/main-quest/mountain-village-and-the-goron-hero/': {
-      items: ['mask-goron'],
+      items: ['item-lens-of-truth', 'mask-goron', 'song-goron-lullaby', 'owl-snowhead'],
       quests: ['/masks/goron-mask/']
     },
-    '/main-quest/snowhead-temple/': { items: ['fairy-snowhead'], quests: [] },
+    '/main-quest/snowhead-temple/': {
+      items: ['item-fire-arrows', 'fairy-snowhead', 'boss-goht'],
+      quests: []
+    },
     '/main-quest/spring-powder-kegs-and-epona/': {
-      items: ['side-goron-race', 'side-sword-upgrades'],
+      items: ['upgrade-powder-keg', 'side-goron-race', 'song-epona', 'side-sword-upgrades'],
       quests: ['/side-quests/goron-race/', '/side-quests/sword-upgrades/']
     },
     '/main-quest/great-bay-and-the-zora-eggs/': {
-      items: ['mask-zora'],
+      items: ['mask-zora', 'item-hookshot', 'song-new-wave-bossa-nova'],
       quests: ['/masks/zora-mask/']
     },
-    '/main-quest/great-bay-temple/': { items: ['fairy-great-bay'], quests: [] },
+    '/main-quest/great-bay-temple/': {
+      items: ['item-ice-arrows', 'fairy-great-bay', 'boss-gyorg'],
+      quests: []
+    },
     '/main-quest/ikana-graveyard-and-canyon/': {
-      items: ['mask-garo', 'mask-stone', 'mask-captain', 'mask-gibdo'],
+      items: ['mask-garo', 'mask-stone', 'mask-captain', 'song-storms', 'mask-gibdo', 'owl-ikana-canyon'],
       quests: ['/masks/garos-mask/', '/masks/stone-mask/', '/masks/captains-hat/', '/masks/gibdo-mask/', '/side-quests/gorman-brothers-horse-race/']
     },
+    '/main-quest/beneath-the-well-and-ikana-castle/': {
+      items: ['item-mirror-shield', 'song-elegy-emptiness'],
+      quests: []
+    },
+    '/main-quest/climbing-stone-tower/': { items: ['owl-stone-tower'], quests: [] },
     '/main-quest/stone-tower-temple/': {
-      items: ['mask-giant', 'fairy-stone-tower'],
+      items: ['item-light-arrows', 'mask-giant', 'fairy-stone-tower', 'boss-twinmold'],
       quests: ['/masks/giants-mask/']
     },
     '/main-quest/the-moon-and-majora/': {
-      items: ['mask-fierce-deity'],
+      items: ['moon-heart-pieces', 'mask-fierce-deity', 'story-majora'],
       quests: ['/masks/fierce-deitys-mask/']
     }
   };
@@ -267,6 +285,8 @@
       if (completionCard) {
         const allStepsComplete = taskBoxes.length > 0 && taskBoxes.every(item => item.checked);
         setComplete(completionCard.dataset.progressKey, allStepsComplete);
+      } else {
+        renderProgress();
       }
     });
   });

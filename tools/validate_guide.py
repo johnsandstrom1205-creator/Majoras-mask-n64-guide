@@ -75,6 +75,11 @@ hp = (docs / "collectibles/heart-pieces.md").read_text(encoding="utf-8")
 if len(re.findall(r"^\| \d+ \|", hp, re.M)) != 52:
     errors.append("Heart Piece table does not contain 52 numbered entries")
 
+master = (docs / "checklist.md").read_text(encoding="utf-8")
+for line_number, line in enumerate(master.splitlines(), start=1):
+    if line.startswith("- [ ]") and 'data-progress-item=' not in line and 'data-completes-quest=' not in line:
+        errors.append(f"Unmapped Master Checklist item at docs/checklist.md:{line_number}")
+
 if errors:
     print("\n".join(errors))
     sys.exit(1)

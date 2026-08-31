@@ -36,6 +36,6 @@ The Gibdo Mask makes Gibdos speak rather than attack. It is the key to the tradi
 - [ ] <span data-progress-item="mask-garo" data-completes-quest="/masks/garos-mask/" data-completes-quests="/side-quests/gorman-brothers-horse-race/">Garo's Mask obtained</span>
 - [ ] <span data-progress-item="mask-stone" data-completes-quest="/masks/stone-mask/">Stone Mask obtained</span>
 - [ ] <span data-progress-item="mask-captain" data-completes-quest="/masks/captains-hat/">Captain's Hat obtained</span>
-- [ ] Song of Storms learned
+- [ ] <span data-progress-item="song-storms">Song of Storms learned</span>
 - [ ] <span data-progress-item="mask-gibdo" data-completes-quest="/masks/gibdo-mask/">Gibdo Mask obtained</span>
-- [ ] Ikana Canyon owl activated
+- [ ] <span data-progress-item="owl-ikana-canyon">Ikana Canyon owl activated</span>

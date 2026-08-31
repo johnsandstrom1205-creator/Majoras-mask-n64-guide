@@ -36,7 +36,7 @@ Shine the shield's reflected light on the sun block to exit directly into the An
 
 After the battle, the king teaches the **Elegy of Emptiness**. The song creates a statue of the form currently playing it. Human, Goron, and Zora statues hold heavy floor switches; the Deku statue is too light for most large switches.
 
-- [ ] Mirror Shield obtained
+- [ ] <span data-progress-item="item-mirror-shield">Mirror Shield obtained</span>
 - [ ] Ikana Castle roof Piece of Heart collected
 - [ ] King Igos defeated
-- [ ] Elegy of Emptiness learned
+- [ ] <span data-progress-item="song-elegy-emptiness">Elegy of Emptiness learned</span>

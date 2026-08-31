@@ -30,5 +30,5 @@ Use Elegy statues on the three entrance switches to align the giant blocks, then
 > **100% planning:** enter with the Great Fairy's Mask, a full magic meter, arrows, bombs, and at least one fairy in a bottle. Stone Tower's 15 fairies require visiting rooms in both normal and inverted orientations.
 
 - [ ] Tower ascent solved
-- [ ] Stone Tower owl activated
+- [ ] <span data-progress-item="owl-stone-tower">Stone Tower owl activated</span>
 - [ ] Temple entrance opened

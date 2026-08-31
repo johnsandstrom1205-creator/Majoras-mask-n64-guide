@@ -37,8 +37,8 @@ Return before 2:00 AM on the First Night to defend the barn. Completing that def
 
 Powder Keg certification, Epona's Song, the bottle, Gold Dust bottle slot, Gilded Sword, and masks persist. Spring itself does not; replay Goht from the temple entrance whenever you need the thawed region in a later cycle.
 
-- [ ] Powder Keg certification complete
+- [ ] <span data-progress-item="upgrade-powder-keg">Powder Keg certification complete</span>
 - [ ] <span data-progress-item="side-goron-race" data-completes-quest="/side-quests/goron-race/">Goron Race won</span>
 - [ ] <span data-progress-item="side-goron-race">Gold Dust bottle obtained</span>
-- [ ] Epona's Song learned
+- [ ] <span data-progress-item="song-epona">Epona's Song learned</span>
 - [ ] <span data-progress-item="side-sword-upgrades" data-completes-quest="/side-quests/sword-upgrades/">Gilded Sword forged</span>

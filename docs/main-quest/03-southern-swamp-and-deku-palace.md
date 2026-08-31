@@ -47,6 +47,6 @@ If time is already late on the Second Day, activate the owl and reset before ent
 - [ ] Koume rescued
 - [ ] First Empty Bottle obtained
 - [ ] Pictograph Box obtained
-- [ ] Sonata of Awakening learned
-- [ ] Song of Soaring learned
-- [ ] Woodfall owl statue activated
+- [ ] <span data-progress-item="song-sonata-awakening">Sonata of Awakening learned</span>
+- [ ] <span data-progress-item="song-soaring">Song of Soaring learned</span>
+- [ ] <span data-progress-item="owl-woodfall">Woodfall owl statue activated</span>
