@@ -48,6 +48,7 @@
 
   const sidebar = document.querySelector('.sidebar');
   const toggle = document.querySelector('.nav-toggle');
+  const sidebarClose = document.querySelector('[data-sidebar-close]');
   if (toggle && sidebar) {
     const desktopMode = window.matchMedia('(min-width: 921px)');
 
@@ -80,6 +81,12 @@
         setMobileNavigationOpen(!sidebar.classList.contains('open'));
       }
       syncNavigation();
+    });
+
+    sidebarClose?.addEventListener('click', () => {
+      setMobileNavigationOpen(false);
+      syncNavigation();
+      toggle.focus();
     });
 
     sidebar.querySelectorAll('a').forEach(link => {
