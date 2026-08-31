@@ -22,9 +22,9 @@ permalink: /side-quests/great-fairy-restorations/
 
 ## Completion checklist
 
-- [ ] Return Clock Town's single fairy as Deku Link in the opening cycle for magic.
-- [ ] Return it as human Link after resetting for the Great Fairy's Mask.
-- [ ] Collect 15 fairies in Woodfall for the enhanced spin attack.
-- [ ] Collect 15 in Snowhead for Double Magic.
-- [ ] Collect 15 in Great Bay for Double Defense.
-- [ ] Collect 15 in Stone Tower for the Great Fairy's Sword.
+- [ ] <span data-progress-item="fairy-clock-town-deku">Return Clock Town's single fairy as Deku Link in the opening cycle for magic.</span>
+- [ ] <span data-progress-item="fairy-clock-town-human" data-updates-items="mask-great-fairy" data-completes-quest="/masks/great-fairys-mask/">Return it as human Link after resetting for the Great Fairy's Mask.</span>
+- [ ] <span data-progress-item="fairy-woodfall">Collect 15 fairies in Woodfall for the enhanced spin attack.</span>
+- [ ] <span data-progress-item="fairy-snowhead">Collect 15 in Snowhead for Double Magic.</span>
+- [ ] <span data-progress-item="fairy-great-bay">Collect 15 in Great Bay for Double Defense.</span>
+- [ ] <span data-progress-item="fairy-stone-tower">Collect 15 in Stone Tower for the Great Fairy's Sword.</span>

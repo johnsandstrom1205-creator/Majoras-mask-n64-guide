@@ -46,6 +46,6 @@ After victory, the cycle ends and the credits reflect characters whose notebook 
 
 - [ ] Four Moon Heart Pieces collected
 - [ ] All 20 normal masks traded to Moon Children
-- [ ] Fierce Deity's Mask obtained
+- [ ] <span data-progress-item="mask-fierce-deity" data-completes-quest="/masks/fierce-deitys-mask/">Fierce Deity's Mask obtained</span>
 - [ ] Majora defeated
 - [ ] Final save created after the credits

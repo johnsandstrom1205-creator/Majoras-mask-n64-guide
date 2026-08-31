@@ -26,5 +26,5 @@ Recruits five frogs for the spring choir, which rewards a Piece of Heart.
 
 ## Completion checklist
 
-- [ ] Don Gero's Mask obtained
+- [ ] <span data-progress-item="mask-don-gero">Don Gero's Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

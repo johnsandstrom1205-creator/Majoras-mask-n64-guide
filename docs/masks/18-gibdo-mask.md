@@ -26,5 +26,5 @@ Makes Gibdos and many ReDeads non-hostile; required for the well's item trades.
 
 ## Completion checklist
 
-- [ ] Gibdo Mask obtained
+- [ ] <span data-progress-item="mask-gibdo">Gibdo Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

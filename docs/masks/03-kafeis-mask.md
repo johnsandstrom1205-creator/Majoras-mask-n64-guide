@@ -25,5 +25,5 @@ Starts the Anju and Kafei investigation and changes dialogue with many townspeop
 
 ## Completion checklist
 
-- [ ] Kafei's Mask obtained
+- [ ] <span data-progress-item="mask-kafei">Kafei's Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

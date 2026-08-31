@@ -37,7 +37,7 @@ After the boss, cut the vines in the small room and put the Deku Princess in an 
 With all 15 Woodfall fairies, visit the fountain in a cave along Woodfall's outer wall. The restored Great Fairy grants an enhanced spin attack.
 
 - [ ] Hero's Bow obtained
-- [ ] 15/15 Stray Fairies returned
+- [ ] <span data-progress-item="fairy-woodfall">15/15 Stray Fairies returned</span>
 - [ ] Odolwa's Remains obtained
 - [ ] Oath to Order learned
 - [ ] Deku Princess returned

@@ -21,4 +21,4 @@ permalink: /side-quests/grog-and-the-cucco-chicks/
 
 - [ ] Hold B while wearing the Bremen Mask.
 - [ ] Collect all ten chicks into one marching line.
-- [ ] Continue marching until all ten mature, then speak to Grog.
+- [ ] <span data-progress-item="mask-bunny-hood" data-completes-quest="/masks/bunny-hood/">Continue marching until all ten mature, then receive the Bunny Hood from Grog.</span>

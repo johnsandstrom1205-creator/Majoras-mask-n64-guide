@@ -26,5 +26,5 @@ Reveals fragrant mushrooms used to brew Blue Potion.
 
 ## Completion checklist
 
-- [ ] Mask of Scents obtained
+- [ ] <span data-progress-item="mask-scents" data-completes-quest="/side-quests/deku-butlers-race/">Mask of Scents obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

@@ -26,5 +26,5 @@ Lets Link command Stalchildren and open the three night-specific graves.
 
 ## Completion checklist
 
-- [ ] Captain's Hat obtained
+- [ ] <span data-progress-item="mask-captain">Captain's Hat obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

@@ -26,5 +26,5 @@ Makes most ordinary guards and enemies ignore Link; especially useful in Pirates
 
 ## Completion checklist
 
-- [ ] Stone Mask obtained
+- [ ] <span data-progress-item="mask-stone">Stone Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

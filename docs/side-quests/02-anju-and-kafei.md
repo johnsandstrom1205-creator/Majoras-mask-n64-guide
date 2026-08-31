@@ -26,13 +26,14 @@ permalink: /side-quests/anju-and-kafei/
 
 ## Completion checklist
 
-- [ ] First Day, 10:00 AM–8:00 PM: obtain Kafei's Mask from Madame Aroma.
+- [ ] <span data-progress-item="mask-kafei" data-completes-quest="/masks/kafeis-mask/">First Day, 10:00 AM–8:00 PM: obtain Kafei's Mask from Madame Aroma.</span>
 - [ ] First Day, about 2:00 PM: speak to Anju after the Postman delivers her letter; wear Kafei's Mask and agree to meet.
 - [ ] First Night, 11:30 PM: enter the Stock Pot Inn kitchen and receive the Letter to Kafei.
 - [ ] Mail the letter before the next pickup.
 - [ ] Second Day, about 3:00 PM: follow the Postman to the Laundry Pool and enter Kafei's hideout after he collects the letter. Receive the Pendant of Memories.
 - [ ] Give the pendant to Anju before the Final Night.
-- [ ] Final Day, 1:00–10:00 PM: collect the Keaton Mask and Special Delivery from the Curiosity Shop owner in the hideout.
+- [ ] <span data-progress-item="mask-keaton" data-completes-quest="/masks/keaton-mask/">Final Day, 1:00–10:00 PM: collect the Keaton Mask and Special Delivery from the Curiosity Shop owner in the hideout.</span>
 - [ ] Final Day, about 6:00 PM: meet Kafei at Sakon's Hideout in Ikana. Alternate Link and Kafei to recover the Sun's Mask before it reaches the conveyor exit.
-- [ ] Final Night: choose one delivery branch for the Postman's Hat or Madame Aroma's Bottle. These require separate cycles for both rewards.
-- [ ] Return to the Stock Pot Inn employees-only room and wait until roughly 4:30 AM for the Couple's Mask.
+- [ ] <span data-progress-item="mask-postman" data-completes-quest="/masks/postmans-hat/">Final Night: give the Special Delivery to the Postman and receive the Postman's Hat.</span>
+- [ ] On a separate cycle, deliver the Special Delivery directly to Madame Aroma and receive her Bottle.
+- [ ] <span data-progress-item="mask-couples" data-completes-quest="/masks/couples-mask/">Return to the Stock Pot Inn employees-only room and wait until roughly 4:30 AM for the Couple's Mask.</span>

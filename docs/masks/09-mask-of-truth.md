@@ -26,5 +26,5 @@ Lets Link read Gossip Stones and understand animals, including dogs at Mamamu Ya
 
 ## Completion checklist
 
-- [ ] Mask of Truth obtained
+- [ ] <span data-progress-item="mask-truth" data-completes-quest="/side-quests/swamp-spider-house/">Mask of Truth obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

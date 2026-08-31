@@ -26,5 +26,5 @@ Prevents sleep and unlocks both of Anju's Grandmother's story rewards.
 
 ## Completion checklist
 
-- [ ] All-Night Mask obtained
+- [ ] <span data-progress-item="mask-all-night">All-Night Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

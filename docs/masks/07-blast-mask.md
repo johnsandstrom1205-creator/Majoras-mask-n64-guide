@@ -26,5 +26,5 @@ Creates an explosion at Link's position; raise the shield before detonation to a
 
 ## Completion checklist
 
-- [ ] Blast Mask obtained
+- [ ] <span data-progress-item="mask-blast" data-completes-quest="/side-quests/bomb-shop-robbery/">Blast Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

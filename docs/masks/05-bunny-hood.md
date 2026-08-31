@@ -26,5 +26,5 @@ Greatly increases running speed and keeps the Postman's ten-second timer visible
 
 ## Completion checklist
 
-- [ ] Bunny Hood obtained
+- [ ] <span data-progress-item="mask-bunny-hood" data-completes-quest="/side-quests/grog-and-the-cucco-chicks/">Bunny Hood obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

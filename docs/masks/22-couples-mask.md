@@ -26,5 +26,5 @@ Ends the mayor's meeting and awards a Piece of Heart; required for full notebook
 
 ## Completion checklist
 
-- [ ] Couple's Mask obtained
+- [ ] <span data-progress-item="mask-couples">Couple's Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

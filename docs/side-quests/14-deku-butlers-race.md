@@ -23,4 +23,4 @@ permalink: /side-quests/deku-butlers-race/
 - [ ] Enter the cave outside the palace after the royal reunion.
 - [ ] Follow the Butler's light through doors, moving walls, fire, and narrow platforms.
 - [ ] Switch between human and Deku form where their movement is strongest.
-- [ ] Reach the finish before he gives up waiting.
+- [ ] <span data-progress-item="mask-scents" data-completes-quest="/masks/mask-of-scents/">Reach the finish and receive the Mask of Scents.</span>

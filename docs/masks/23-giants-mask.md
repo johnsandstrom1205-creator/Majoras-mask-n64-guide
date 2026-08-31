@@ -26,5 +26,5 @@ Turns Link giant during Twinmold's battle and continuously drains magic.
 
 ## Completion checklist
 
-- [ ] Giant's Mask obtained
+- [ ] <span data-progress-item="mask-giant">Giant's Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

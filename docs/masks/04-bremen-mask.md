@@ -25,5 +25,5 @@ Makes small animals march behind Link; required to grow Grog's ten Cucco chicks.
 
 ## Completion checklist
 
-- [ ] Bremen Mask obtained
+- [ ] <span data-progress-item="mask-bremen">Bremen Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

@@ -41,6 +41,6 @@ Later, Gyorg releases smaller fish. Clear them with the barrier and keep moving.
 Return all 15 Great Bay fairies to the fountain on the cliff islands near Zora Cape. Use the Hookshot to cross. The reward is doubled defense: enemy damage is halved.
 
 - [ ] Ice Arrows obtained
-- [ ] 15/15 Stray Fairies returned
+- [ ] <span data-progress-item="fairy-great-bay">15/15 Stray Fairies returned</span>
 - [ ] Gyorg's Remains obtained
-- [ ] Double Defense obtained
+- [ ] <span data-progress-item="fairy-great-bay">Double Defense obtained</span>

@@ -26,5 +26,5 @@ Allows Link to inspect any Clock Town mailbox; the first check awards a Piece of
 
 ## Completion checklist
 
-- [ ] Postman's Hat obtained
+- [ ] <span data-progress-item="mask-postman">Postman's Hat obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

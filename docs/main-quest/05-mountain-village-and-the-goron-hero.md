@@ -39,6 +39,6 @@ Roll across the ramps on the Snowhead path, using magic spikes to clear long gap
 > **Recommended detour:** light every torch in the Goron Shrine to spin the chandelier, break its pots with a rolling jump, and deliver the Rock Sirloin to the hungry Goron for Don Gero's Mask.
 
 - [ ] Lens of Truth obtained
-- [ ] Goron Mask obtained
+- [ ] <span data-progress-item="mask-goron" data-completes-quest="/masks/goron-mask/">Goron Mask obtained</span>
 - [ ] Goron Lullaby learned
 - [ ] Snowhead owl statue activated

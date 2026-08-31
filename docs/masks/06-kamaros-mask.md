@@ -25,5 +25,5 @@ Teaches Kamaro's dance; performing it for the Rosa Sisters awards a Piece of Hea
 
 ## Completion checklist
 
-- [ ] Kamaro's Mask obtained
+- [ ] <span data-progress-item="mask-kamaro">Kamaro's Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

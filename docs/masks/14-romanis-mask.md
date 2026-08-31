@@ -26,5 +26,5 @@ Grants entry to the Milk Bar, Latte, after 10:00 PM.
 
 ## Completion checklist
 
-- [ ] Romani's Mask obtained
+- [ ] <span data-progress-item="mask-romani" data-completes-quest="/side-quests/cremias-milk-run/">Romani's Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

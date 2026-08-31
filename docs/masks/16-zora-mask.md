@@ -25,5 +25,5 @@ Transforms Link into Zora Link: fast swimming, underwater walking, fin boomerang
 
 ## Completion checklist
 
-- [ ] Zora Mask obtained
+- [ ] <span data-progress-item="mask-zora">Zora Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

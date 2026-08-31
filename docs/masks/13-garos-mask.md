@@ -26,5 +26,5 @@ Reveals Garo spirits and convinces Ikana's cliff watcher to create a Hookshot tr
 
 ## Completion checklist
 
-- [ ] Garo's Mask obtained
+- [ ] <span data-progress-item="mask-garo" data-completes-quest="/side-quests/gorman-brothers-horse-race/">Garo's Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

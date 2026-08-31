@@ -26,5 +26,5 @@ Transforms Link into Deku Link: water hopping, Deku Flowers, bubbles, and a spin
 
 ## Completion checklist
 
-- [ ] Deku Mask obtained
+- [ ] <span data-progress-item="mask-deku">Deku Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

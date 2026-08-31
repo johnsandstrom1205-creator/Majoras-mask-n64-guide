@@ -23,4 +23,4 @@ permalink: /side-quests/gorman-troupe-sound-check/
 - [ ] Enter Latte and speak with Toto.
 - [ ] Stand under the requested light and perform as human Link.
 - [ ] Repeat as Deku, Goron, and Zora Link.
-- [ ] Let the completed arrangement play, then speak to Gorman.
+- [ ] <span data-progress-item="mask-circus-leader" data-completes-quest="/masks/circus-leaders-mask/">Let the completed arrangement play, then receive the Circus Leader's Mask from Gorman.</span>

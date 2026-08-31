@@ -23,4 +23,4 @@ permalink: /side-quests/goron-race/
 - [ ] Open the racetrack with the Powder Keg test.
 - [ ] Enter the race as Goron Link.
 - [ ] Use rolling spikes, collect magic jars, and avoid being pinballed by the pack.
-- [ ] Pass on the final straight and finish first.
+- [ ] <span data-progress-item="side-goron-race">Pass on the final straight and finish first.</span>

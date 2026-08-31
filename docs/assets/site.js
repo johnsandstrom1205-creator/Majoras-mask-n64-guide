@@ -136,16 +136,104 @@
     if (currentGroup) currentGroup.open = true;
   }
 
+  const STORY_OUTCOMES = {
+    '/main-quest/the-first-three-days/': {
+      items: ['mask-deku', 'fairy-clock-town-deku'],
+      quests: ['/masks/deku-mask/']
+    },
+    '/main-quest/clock-town-preparation/': {
+      items: ['mask-great-fairy', 'fairy-clock-town-human'],
+      quests: ['/masks/great-fairys-mask/']
+    },
+    '/main-quest/woodfall-temple/': { items: ['fairy-woodfall'], quests: [] },
+    '/main-quest/mountain-village-and-the-goron-hero/': {
+      items: ['mask-goron'],
+      quests: ['/masks/goron-mask/']
+    },
+    '/main-quest/snowhead-temple/': { items: ['fairy-snowhead'], quests: [] },
+    '/main-quest/spring-powder-kegs-and-epona/': {
+      items: ['side-goron-race', 'side-sword-upgrades'],
+      quests: ['/side-quests/goron-race/', '/side-quests/sword-upgrades/']
+    },
+    '/main-quest/great-bay-and-the-zora-eggs/': {
+      items: ['mask-zora'],
+      quests: ['/masks/zora-mask/']
+    },
+    '/main-quest/great-bay-temple/': { items: ['fairy-great-bay'], quests: [] },
+    '/main-quest/ikana-graveyard-and-canyon/': {
+      items: ['mask-garo', 'mask-stone', 'mask-captain', 'mask-gibdo'],
+      quests: ['/masks/garos-mask/', '/masks/stone-mask/', '/masks/captains-hat/', '/masks/gibdo-mask/', '/side-quests/gorman-brothers-horse-race/']
+    },
+    '/main-quest/stone-tower-temple/': {
+      items: ['mask-giant', 'fairy-stone-tower'],
+      quests: ['/masks/giants-mask/']
+    },
+    '/main-quest/the-moon-and-majora/': {
+      items: ['mask-fierce-deity'],
+      quests: ['/masks/fierce-deitys-mask/']
+    }
+  };
+  const itemKey = item => `mm-guide:item:${item}`;
+  Object.entries(STORY_OUTCOMES).forEach(([storyKey, outcomes]) => {
+    if (storage.get(`${COMPLETE_PREFIX}${storyKey}`) !== '1') return;
+    outcomes.items.forEach(item => storage.set(itemKey(item), '1'));
+    outcomes.quests.forEach(quest => storage.set(`${COMPLETE_PREFIX}${quest}`, '1'));
+  });
+
+  const COMPOSITE_QUESTS = {
+    '/side-quests/great-fairy-restorations/': [
+      'fairy-clock-town-deku',
+      'fairy-clock-town-human',
+      'fairy-woodfall',
+      'fairy-snowhead',
+      'fairy-great-bay',
+      'fairy-stone-tower'
+    ]
+  };
+  const updateCompositeProgress = (migrateCompleted = false) => {
+    Object.entries(COMPOSITE_QUESTS).forEach(([questKey, items]) => {
+      if (migrateCompleted && storage.get(`${COMPLETE_PREFIX}${questKey}`) === '1') {
+        items.forEach(item => storage.set(itemKey(item), '1'));
+      }
+      const complete = items.every(item => storage.get(itemKey(item)) === '1');
+      storage.set(`${COMPLETE_PREFIX}${questKey}`, complete ? '1' : '0');
+    });
+  };
+  updateCompositeProgress(true);
+
   const taskBoxes = [...document.querySelectorAll('.prose input[type="checkbox"]')];
   const taskKey = index => `mm-guide:${location.pathname}:${index}`;
-  const linkedQuestKey = box => box.closest('li')?.querySelector('[data-completes-quest]')?.dataset.completesQuest;
+  const taskMarker = box => box.closest('li')?.querySelector('[data-progress-item], [data-completes-quest], [data-completes-quests], [data-updates-items]');
+  const linkedQuestKeys = box => {
+    const marker = taskMarker(box);
+    return [marker?.dataset.completesQuest, ...(marker?.dataset.completesQuests || '').split(/\s+/)].filter(Boolean);
+  };
+  const taskProgressItem = box => taskMarker(box)?.dataset.progressItem;
+  const taskUpdatedItems = box => (taskMarker(box)?.dataset.updatesItems || '').split(/\s+/).filter(Boolean);
   const taskStorageKey = (box, index) => {
-    const linkedKey = linkedQuestKey(box);
-    return linkedKey ? `${COMPLETE_PREFIX}${linkedKey}` : taskKey(index);
+    const progressItem = taskProgressItem(box);
+    const linkedKey = linkedQuestKeys(box)[0];
+    return progressItem ? itemKey(progressItem) : linkedKey ? `${COMPLETE_PREFIX}${linkedKey}` : taskKey(index);
+  };
+  const setTaskState = (box, index, complete) => {
+    const value = complete ? '1' : '0';
+    const currentKey = taskStorageKey(box, index);
+    storage.set(currentKey, value);
+    taskBoxes.forEach((peer, peerIndex) => {
+      if (taskStorageKey(peer, peerIndex) === currentKey) peer.checked = complete;
+    });
+    taskUpdatedItems(box).forEach(item => storage.set(itemKey(item), value));
+    linkedQuestKeys(box).forEach(linkedKey => storage.set(`${COMPLETE_PREFIX}${linkedKey}`, value));
+    updateCompositeProgress();
   };
   taskBoxes.forEach((box, index) => {
     box.disabled = false;
-    box.checked = storage.get(taskStorageKey(box, index)) === '1';
+    const currentKey = taskStorageKey(box, index);
+    const currentValue = storage.get(currentKey);
+    const legacyValue = storage.get(taskKey(index));
+    const linkedValue = linkedQuestKeys(box).some(key => storage.get(`${COMPLETE_PREFIX}${key}`) === '1') ? '1' : null;
+    box.checked = currentValue === '1' || (currentValue === null && (legacyValue === '1' || linkedValue === '1'));
+    if (box.checked && currentValue !== '1') setTaskState(box, index, true);
   });
 
   const questLinks = [...document.querySelectorAll('.quest-link[data-progress-key]')];
@@ -161,7 +249,7 @@
   const syncCurrentChecklist = complete => {
     taskBoxes.forEach((box, index) => {
       box.checked = complete;
-      storage.set(taskStorageKey(box, index), complete ? '1' : '0');
+      setTaskState(box, index, complete);
     });
   };
 
@@ -175,8 +263,7 @@
 
   taskBoxes.forEach((box, index) => {
     box.addEventListener('change', () => {
-      storage.set(taskStorageKey(box, index), box.checked ? '1' : '0');
-      if (linkedQuestKey(box)) renderProgress();
+      setTaskState(box, index, box.checked);
       if (completionCard) {
         const allStepsComplete = taskBoxes.length > 0 && taskBoxes.every(item => item.checked);
         setComplete(completionCard.dataset.progressKey, allStepsComplete);

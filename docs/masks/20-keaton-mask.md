@@ -26,5 +26,5 @@ Summons Keaton at moving-grass circles; answer five questions for a Piece of Hea
 
 ## Completion checklist
 
-- [ ] Keaton Mask obtained
+- [ ] <span data-progress-item="mask-keaton">Keaton Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

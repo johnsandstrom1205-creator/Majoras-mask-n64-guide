@@ -26,5 +26,5 @@ Transforms Link into Fierce Deity during boss rooms; sword beams make most bosse
 
 ## Completion checklist
 
-- [ ] Fierce Deity's Mask obtained
+- [ ] <span data-progress-item="mask-fierce-deity">Fierce Deity's Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

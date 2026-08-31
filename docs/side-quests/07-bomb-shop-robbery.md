@@ -21,4 +21,4 @@ permalink: /side-quests/bomb-shop-robbery/
 
 - [ ] Wait near the North Clock Town playground before midnight.
 - [ ] After Sakon steals the bag, strike him once with the sword.
-- [ ] Speak with the old woman after he flees.
+- [ ] <span data-progress-item="mask-blast" data-completes-quest="/masks/blast-mask/">Speak with the old woman after he flees and receive the Blast Mask.</span>

@@ -21,6 +21,6 @@ permalink: /side-quests/sword-upgrades/
 ## Completion checklist
 
 - [ ] On the First Day, pay the smiths 100 rupees to forge the Razor Sword overnight.
-- [ ] Win the Goron Race for a bottle of Gold Dust.
+- [ ] <span data-progress-item="side-goron-race" data-completes-quest="/side-quests/goron-race/">Win the Goron Race for a bottle of Gold Dust.</span>
 - [ ] Collect the Razor Sword on the Second Day and immediately hand it back with Gold Dust.
-- [ ] Collect the Gilded Sword on the Final Day.
+- [ ] <span data-progress-item="side-sword-upgrades">Collect the Gilded Sword on the Final Day.</span>

@@ -25,4 +25,4 @@ permalink: /side-quests/swamp-spider-house/
 - [ ] Kill all 30 Gold Skulltulas and collect every token.
 - [ ] Use bottled bugs on soft-soil patches; plant and water beans where required.
 - [ ] Listen for scratching to locate hidden Skulltulas.
-- [ ] Return to the cursed man with 30 tokens.
+- [ ] <span data-progress-item="mask-truth" data-completes-quest="/masks/mask-of-truth/">Return to the cursed man with 30 tokens and receive the Mask of Truth.</span>

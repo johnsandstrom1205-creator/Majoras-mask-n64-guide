@@ -23,4 +23,4 @@ permalink: /side-quests/gorman-brothers-horse-race/
 - [ ] Summon Epona inside the track.
 - [ ] Accept the two-on-one race.
 - [ ] Use carrots in measured bursts, take inside lines, and avoid every fence.
-- [ ] Cross the finish line first.
+- [ ] <span data-progress-item="mask-garo" data-completes-quest="/masks/garos-mask/">Cross the finish line first and receive Garo's Mask.</span>

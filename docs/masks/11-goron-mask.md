@@ -26,5 +26,5 @@ Transforms Link into Goron Link: rolling, punching, pounding, lava resistance, a
 
 ## Completion checklist
 
-- [ ] Goron Mask obtained
+- [ ] <span data-progress-item="mask-goron">Goron Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

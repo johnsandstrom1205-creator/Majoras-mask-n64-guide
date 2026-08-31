@@ -25,5 +25,5 @@ Shimmers when a dungeon fairy remains in the room and attracts released Stray Fa
 
 ## Completion checklist
 
-- [ ] Great Fairy's Mask obtained
+- [ ] <span data-progress-item="mask-great-fairy">Great Fairy's Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

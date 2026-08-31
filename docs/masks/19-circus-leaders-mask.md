@@ -26,5 +26,5 @@ Calms the Gorman Brothers during Cremia's ambush; mainly a story and collection 
 
 ## Completion checklist
 
-- [ ] Circus Leader's Mask obtained
+- [ ] <span data-progress-item="mask-circus-leader" data-completes-quest="/side-quests/gorman-troupe-sound-check/">Circus Leader's Mask obtained</span>
 - [ ] Its related notebook event or reward completed, when applicable

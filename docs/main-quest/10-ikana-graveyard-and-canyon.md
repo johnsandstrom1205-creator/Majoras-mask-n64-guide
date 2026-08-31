@@ -33,9 +33,9 @@ Wait until Pamela leaves the house, or use the Stone Mask to approach unnoticed.
 
 The Gibdo Mask makes Gibdos speak rather than attack. It is the key to the trading doors Beneath the Well.
 
-- [ ] Garo's Mask obtained
-- [ ] Stone Mask obtained
-- [ ] Captain's Hat obtained
+- [ ] <span data-progress-item="mask-garo" data-completes-quest="/masks/garos-mask/" data-completes-quests="/side-quests/gorman-brothers-horse-race/">Garo's Mask obtained</span>
+- [ ] <span data-progress-item="mask-stone" data-completes-quest="/masks/stone-mask/">Stone Mask obtained</span>
+- [ ] <span data-progress-item="mask-captain" data-completes-quest="/masks/captains-hat/">Captain's Hat obtained</span>
 - [ ] Song of Storms learned
-- [ ] Gibdo Mask obtained
+- [ ] <span data-progress-item="mask-gibdo" data-completes-quest="/masks/gibdo-mask/">Gibdo Mask obtained</span>
 - [ ] Ikana Canyon owl activated

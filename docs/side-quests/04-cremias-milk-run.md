@@ -21,4 +21,4 @@ permalink: /side-quests/cremias-milk-run/
 
 - [ ] Ride with Cremia from the ranch.
 - [ ] During the detour through Gorman Track, shoot the two masked pursuers repeatedly.
-- [ ] Keep at least one milk bottle intact until the wagon reaches Clock Town.
+- [ ] <span data-progress-item="mask-romani" data-completes-quest="/masks/romanis-mask/">Keep at least one milk bottle intact until the wagon reaches Clock Town and receive Romani's Mask.</span>
