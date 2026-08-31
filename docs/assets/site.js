@@ -4,6 +4,7 @@
   const TOTAL_QUESTS = 77;
   const COMPLETE_PREFIX = 'mm-guide:completed:';
   const SIDEBAR_KEY = 'mm-guide:sidebar-collapsed';
+  const BACKUP_FORMAT = 'unofficial-mm-guide-progress';
 
   const storage = {
     available: true,
@@ -21,6 +22,27 @@
       } catch (_) {
         this.available = false;
       }
+    },
+    remove(key) {
+      try {
+        localStorage.removeItem(key);
+      } catch (_) {
+        this.available = false;
+      }
+    },
+    progressEntries() {
+      const entries = {};
+      try {
+        for (let index = 0; index < localStorage.length; index += 1) {
+          const key = localStorage.key(index);
+          if (key?.startsWith('mm-guide:') && key !== SIDEBAR_KEY) {
+            entries[key] = localStorage.getItem(key);
+          }
+        }
+      } catch (_) {
+        this.available = false;
+      }
+      return entries;
     }
   };
 
@@ -249,6 +271,90 @@
       if (note) note.textContent = complete ? 'Saved in this browser' : 'Saved only in this browser';
     }
   }
+
+  const exportButton = document.querySelector('[data-progress-export]');
+  const importButton = document.querySelector('[data-progress-import]');
+  const importFile = document.querySelector('[data-progress-file]');
+  const progressStatus = document.querySelector('[data-progress-status]');
+
+  const showProgressStatus = (message, isError = false) => {
+    if (!progressStatus) return;
+    progressStatus.textContent = message;
+    progressStatus.classList.toggle('is-error', isError);
+  };
+
+  if (exportButton) {
+    exportButton.addEventListener('click', async () => {
+      const backup = {
+        format: BACKUP_FORMAT,
+        version: 1,
+        exportedAt: new Date().toISOString(),
+        items: storage.progressEntries()
+      };
+      if (!storage.available) {
+        showProgressStatus('Progress could not be read in this browser mode.', true);
+        return;
+      }
+
+      const filename = `mm-guide-progress-${new Date().toISOString().slice(0, 10)}.json`;
+      const file = new File([JSON.stringify(backup, null, 2)], filename, { type: 'application/json' });
+
+      try {
+        if (navigator.share && navigator.canShare?.({ files: [file] })) {
+          await navigator.share({ title: 'Majora\'s Mask guide progress', files: [file] });
+        } else {
+          const url = URL.createObjectURL(file);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = filename;
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+          setTimeout(() => URL.revokeObjectURL(url), 1000);
+        }
+        showProgressStatus('Progress exported. Keep the file somewhere safe.');
+      } catch (error) {
+        if (error?.name !== 'AbortError') showProgressStatus('The progress file could not be exported.', true);
+      }
+    });
+  }
+
+  importButton?.addEventListener('click', () => importFile?.click());
+  importFile?.addEventListener('change', async () => {
+    const file = importFile.files?.[0];
+    importFile.value = '';
+    if (!file) return;
+    if (file.size > 1024 * 1024) {
+      showProgressStatus('That file is too large to be a guide backup.', true);
+      return;
+    }
+
+    try {
+      const backup = JSON.parse(await file.text());
+      if (backup?.format !== BACKUP_FORMAT || backup?.version !== 1 || !backup.items || Array.isArray(backup.items) || typeof backup.items !== 'object') {
+        throw new Error('Invalid backup format');
+      }
+
+      const importedEntries = Object.entries(backup.items);
+      const validEntries = importedEntries.filter(([key, value]) => key.startsWith('mm-guide:') && key !== SIDEBAR_KEY && (value === '0' || value === '1'));
+      if (validEntries.length !== importedEntries.length) throw new Error('Invalid backup data');
+
+      const currentEntries = storage.progressEntries();
+      if (Object.keys(currentEntries).length > 0 && !window.confirm('Importing will replace the progress currently saved in this browser. Continue?')) return;
+
+      Object.keys(currentEntries).forEach(key => storage.remove(key));
+      validEntries.forEach(([key, value]) => storage.set(key, value));
+      if (!storage.available) throw new Error('Storage unavailable');
+
+      taskBoxes.forEach((box, index) => {
+        box.checked = storage.get(taskKey(index)) === '1';
+      });
+      renderProgress();
+      showProgressStatus(`Progress imported successfully (${validEntries.length} saved items).`);
+    } catch (_) {
+      showProgressStatus('This is not a valid guide progress backup.', true);
+    }
+  });
 
   renderProgress();
 

@@ -43,6 +43,12 @@ permalink: /
     <div data-progress-summary="mask-quest" data-total="24"><span>Masks</span><strong><span data-category-completed>0</span>/24</strong></div>
   </div>
   <p class="storage-note">Tick checklist items or mark whole quests as completed. Your progress stays in this browser only—there is no account, cloud storage, tracking, or fee.</p>
+  <div class="progress-actions" aria-label="Progress backup">
+    <button class="button button-secondary" type="button" data-progress-export>Export progress</button>
+    <button class="button button-secondary" type="button" data-progress-import>Import progress</button>
+    <input class="visually-hidden" type="file" accept="application/json,.json" data-progress-file aria-label="Choose a progress backup file">
+  </div>
+  <p class="progress-action-status" data-progress-status aria-live="polite"></p>
 </section>
 
 <aside class="install-card" aria-labelledby="install-title">
