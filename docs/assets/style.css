@@ -111,6 +111,12 @@ input[type="checkbox"] { width: 17px; height: 17px; margin-right: 8px; accent-co
 .progress-breakdown > div { display: flex; justify-content: space-between; gap: 10px; padding: 11px 12px; border-radius: 9px; background: rgba(15,12,25,.36); color: var(--muted); font-size: 12px; }
 .progress-breakdown strong { color: var(--ink); }
 .storage-note { margin: 16px 0 0 !important; color: var(--muted) !important; font-size: 12px !important; }
+.install-card { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 20px; align-items: start; margin: 0 0 28px; padding: clamp(20px,4vw,28px); border: 1px solid rgba(104,213,194,.24); border-radius: 16px; background: linear-gradient(145deg,rgba(104,213,194,.075),rgba(33,26,49,.72)); }
+.install-mark { width: 46px; height: 46px; display: grid; place-items: center; color: var(--night); border-radius: 13px; background: var(--teal); font-size: 28px; font-weight: 500; line-height: 1; }
+.install-card h2 { margin: 0 0 9px; font-size: clamp(23px,3vw,30px); }
+.install-card > div:last-child > p:not(.eyebrow) { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.install-card strong { color: var(--ink); }
+.install-card .install-note { margin-top: 8px !important; font-size: 12px !important; }
 .category-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin: 24px 0 45px; }
 .category-card { min-height: 225px; display: flex; flex-direction: column; padding: 22px; color: var(--ink); text-decoration: none; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); transition: transform .18s ease, border-color .18s ease; }
 .category-card:hover { color: var(--ink); transform: translateY(-3px); border-color: rgba(244,201,93,.45); }
@@ -183,6 +189,8 @@ a.chapter-nav-card:hover { color: var(--ink); transform: translateY(-2px); borde
   .progress-heading { display: block; }
   .progress-heading > p { margin-top: 12px; }
   .progress-breakdown { grid-template-columns: 1fr; }
+  .install-card { grid-template-columns: 1fr; gap: 14px; }
+  .install-mark { width: 40px; height: 40px; border-radius: 11px; font-size: 24px; }
   .home-section { display: block; margin: 54px 0; }
   .section-heading { margin-bottom: 28px; }
   .principle-grid { grid-template-columns: 1fr; }

@@ -45,6 +45,16 @@ permalink: /
   <p class="storage-note">Tick checklist items or mark whole quests as completed. Your progress stays in this browser only—there is no account, cloud storage, tracking, or fee.</p>
 </section>
 
+<aside class="install-card" aria-labelledby="install-title">
+  <div class="install-mark" aria-hidden="true">＋</div>
+  <div>
+    <p class="eyebrow">Use it like an app</p>
+    <h2 id="install-title">Add the guide to your Home Screen</h2>
+    <p><strong>iPhone or iPad:</strong> open the Share menu in Safari and choose <em>Add to Home Screen</em>. <strong>Android:</strong> open your browser menu and choose <em>Install app</em> or <em>Add to Home screen</em>.</p>
+    <p class="install-note">The shortcut opens the full guide without an app-store download. Progress is still stored only in that browser on this device.</p>
+  </div>
+</aside>
+
 <div class="category-grid" aria-label="Guide sections">
   <a class="category-card" href="{{ '/main-quest/the-first-three-days/' | relative_url }}">
     <span>Start here</span>
