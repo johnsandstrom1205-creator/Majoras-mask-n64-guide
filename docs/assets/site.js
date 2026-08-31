@@ -138,9 +138,14 @@
 
   const taskBoxes = [...document.querySelectorAll('.prose input[type="checkbox"]')];
   const taskKey = index => `mm-guide:${location.pathname}:${index}`;
+  const linkedQuestKey = box => box.closest('li')?.querySelector('[data-completes-quest]')?.dataset.completesQuest;
+  const taskStorageKey = (box, index) => {
+    const linkedKey = linkedQuestKey(box);
+    return linkedKey ? `${COMPLETE_PREFIX}${linkedKey}` : taskKey(index);
+  };
   taskBoxes.forEach((box, index) => {
     box.disabled = false;
-    box.checked = storage.get(taskKey(index)) === '1';
+    box.checked = storage.get(taskStorageKey(box, index)) === '1';
   });
 
   const questLinks = [...document.querySelectorAll('.quest-link[data-progress-key]')];
@@ -156,7 +161,7 @@
   const syncCurrentChecklist = complete => {
     taskBoxes.forEach((box, index) => {
       box.checked = complete;
-      storage.set(taskKey(index), complete ? '1' : '0');
+      storage.set(taskStorageKey(box, index), complete ? '1' : '0');
     });
   };
 
@@ -170,7 +175,8 @@
 
   taskBoxes.forEach((box, index) => {
     box.addEventListener('change', () => {
-      storage.set(taskKey(index), box.checked ? '1' : '0');
+      storage.set(taskStorageKey(box, index), box.checked ? '1' : '0');
+      if (linkedQuestKey(box)) renderProgress();
       if (completionCard) {
         const allStepsComplete = taskBoxes.length > 0 && taskBoxes.every(item => item.checked);
         setComplete(completionCard.dataset.progressKey, allStepsComplete);
@@ -368,7 +374,7 @@
   window.addEventListener('storage', event => {
     if (!event.key || !event.key.startsWith('mm-guide:')) return;
     taskBoxes.forEach((box, index) => {
-      box.checked = storage.get(taskKey(index)) === '1';
+      box.checked = storage.get(taskStorageKey(box, index)) === '1';
     });
     renderProgress();
   });

@@ -43,7 +43,7 @@ Human Link can leave through Clock Town's gates after speaking to a guard. The i
 ## Ready checklist
 
 - [ ] Bombers' Notebook obtained
-- [ ] Great Fairy's Mask obtained
+- [ ] <span data-completes-quest="/masks/great-fairys-mask/">Great Fairy's Mask obtained</span>
 - [ ] Inverted Song of Time memorized
 - [ ] Bomb Bag purchased
 - [ ] Adult Wallet obtained or in progress
