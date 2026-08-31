@@ -108,11 +108,10 @@
   }
 
   const taskBoxes = [...document.querySelectorAll('.prose input[type="checkbox"]')];
+  const taskKey = index => `mm-guide:${location.pathname}:${index}`;
   taskBoxes.forEach((box, index) => {
     box.disabled = false;
-    const key = `mm-guide:${location.pathname}:${index}`;
-    box.checked = storage.get(key) === '1';
-    box.addEventListener('change', () => storage.set(key, box.checked ? '1' : '0'));
+    box.checked = storage.get(taskKey(index)) === '1';
   });
 
   const questLinks = [...document.querySelectorAll('.quest-link[data-progress-key]')];
@@ -122,17 +121,81 @@
   }));
 
   const isComplete = key => storage.get(`${COMPLETE_PREFIX}${key}`) === '1';
-  const setComplete = (key, complete) => {
+  const completionCard = document.querySelector('[data-page-progress]');
+  const completionButton = completionCard?.querySelector('.completion-toggle');
+
+  const syncCurrentChecklist = complete => {
+    taskBoxes.forEach((box, index) => {
+      box.checked = complete;
+      storage.set(taskKey(index), complete ? '1' : '0');
+    });
+  };
+
+  const setComplete = (key, complete, syncChecklist = false) => {
+    if (syncChecklist && completionCard?.dataset.progressKey === key) {
+      syncCurrentChecklist(complete);
+    }
     storage.set(`${COMPLETE_PREFIX}${key}`, complete ? '1' : '0');
     renderProgress();
   };
 
-  const completionCard = document.querySelector('[data-page-progress]');
-  const completionButton = completionCard?.querySelector('.completion-toggle');
+  taskBoxes.forEach((box, index) => {
+    box.addEventListener('change', () => {
+      storage.set(taskKey(index), box.checked ? '1' : '0');
+      if (completionCard) {
+        const allStepsComplete = taskBoxes.length > 0 && taskBoxes.every(item => item.checked);
+        setComplete(completionCard.dataset.progressKey, allStepsComplete);
+      }
+    });
+  });
+
   if (completionCard && completionButton) {
     completionButton.addEventListener('click', () => {
       const key = completionCard.dataset.progressKey;
-      setComplete(key, !isComplete(key));
+      setComplete(key, !isComplete(key), true);
+    });
+
+    if (taskBoxes.length > 0) {
+      const key = completionCard.dataset.progressKey;
+      if (isComplete(key)) {
+        syncCurrentChecklist(true);
+      } else if (taskBoxes.every(box => box.checked)) {
+        storage.set(`${COMPLETE_PREFIX}${key}`, '1');
+      }
+    }
+  }
+
+  const chapterNavigation = document.querySelector('[data-chapter-navigation]');
+  const nextChapterLink = chapterNavigation?.querySelector('[data-next-chapter]');
+  const completionDialog = document.querySelector('[data-completion-dialog]');
+  if (chapterNavigation?.dataset.currentCategory === 'main-quest' && nextChapterLink && completionCard) {
+    let pendingChapterUrl = nextChapterLink.href;
+
+    const continueToNextChapter = markComplete => {
+      if (markComplete) {
+        setComplete(completionCard.dataset.progressKey, true, true);
+      }
+      if (completionDialog?.open) completionDialog.close();
+      window.location.assign(pendingChapterUrl);
+    };
+
+    nextChapterLink.addEventListener('click', event => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || isComplete(completionCard.dataset.progressKey)) return;
+      event.preventDefault();
+      pendingChapterUrl = nextChapterLink.href;
+
+      if (completionDialog?.showModal) {
+        completionDialog.showModal();
+      } else {
+        continueToNextChapter(window.confirm('Mark this chapter as complete before continuing?'));
+      }
+    });
+
+    completionDialog?.querySelector('[data-complete-and-continue]')?.addEventListener('click', () => continueToNextChapter(true));
+    completionDialog?.querySelector('[data-continue-without]')?.addEventListener('click', () => continueToNextChapter(false));
+    completionDialog?.querySelector('[data-dialog-close]')?.addEventListener('click', () => completionDialog.close());
+    completionDialog?.addEventListener('click', event => {
+      if (event.target === completionDialog) completionDialog.close();
     });
   }
 
@@ -188,6 +251,14 @@
   }
 
   renderProgress();
+
+  window.addEventListener('storage', event => {
+    if (!event.key || !event.key.startsWith('mm-guide:')) return;
+    taskBoxes.forEach((box, index) => {
+      box.checked = storage.get(taskKey(index)) === '1';
+    });
+    renderProgress();
+  });
 
   if (!storage.available) {
     document.querySelectorAll('.storage-note, .completion-toggle small').forEach(node => {
